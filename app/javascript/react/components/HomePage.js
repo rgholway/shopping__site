@@ -33,6 +33,7 @@ class HomePage extends Component {
   }
 
   render() {
+    console.log(this.state.items);
     let itemsArray = this.state.items.map(item => {
       return(
         <ItemTile
@@ -44,9 +45,9 @@ class HomePage extends Component {
       )
     })
     return (
-      <div>
-        {itemsArray}
-      </div>
+          <div className="shopping">
+            {itemsArray}
+          </div>
     )
   }
 }
