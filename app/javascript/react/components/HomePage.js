@@ -44,6 +44,8 @@ class HomePage extends Component {
           fourthPhoto= {item.fourth_photo}
           fifthPhoto= {item.fifth_photo}
           sixthPhoto= {item.sixth_photo}
+          description= {item.description}
+          price= {item.price}
         />
       )
     })

@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 2019_06_01_180953) do
 
   create_table "items", force: :cascade do |t|
     t.string "name", null: false
+    t.string "description"
+    t.string "price"
     t.string "first_photo"
     t.string "second_photo"
     t.string "third_photo"

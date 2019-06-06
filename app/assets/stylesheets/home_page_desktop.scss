@@ -1,11 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Exo+2&display=swap');
 
 .item__name-- {
   position: absolute;
-  bottom: -10%;
-  width: 100%;
-  height: 5%;
-  font-family: 'Noto Sans TC', sans-serif;
+  bottom: -25%;
+  left: -1%;
+  width: 102%;
+  height: 25%;
+  font-family: 'Exo 2', sans-serif;
+  z-index: 12;
 }
 
 .item__name--active {
@@ -13,11 +15,54 @@
   bottom: -25%;
   left: -1%;
   width: 102%;
-  height: 25%;
-  background: lightblue;
-  font-family: 'Noto Sans TC', sans-serif;
+  height: 35%;
+  background: #FEFEFA;
+  font-family: 'Exo 2', sans-serif;
   border: solid 2px black;
   z-index: 12;
+}
+
+.item__price-- {
+  position: absolute;
+  bottom: 50%;
+  right: 2%;
+  width: auto;
+  height: auto;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.item__price--active {
+  position: absolute;
+  top: 0%;
+  right: 2%;
+  width: auto;
+  height: auto;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.item__description-- {
+  position: absolute;
+  width: 0%;
+  height: 0%;
+  overflow: hidden;
+}
+
+.item__description--active {
+  position: absolute;
+  top: 30%;
+  left: 0%;
+  width: auto;
+  height: auto;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.item__price--active {
+  position: absolute;
+  top: 0%;
+  right: 2%;
+  width: auto;
+  height: auto;
+  font-family: 'Exo 2', sans-serif;
 }
 
 .item-- {
@@ -38,8 +83,8 @@
   left: 5%;
   margin-left: 7%;
   margin-bottom: 8%;
-  height: 235px;
-  width: 235px;
+  height: 230px;
+  width: 230px;
   background: lightgrey;
   border: solid 2px black;
   float: left;
