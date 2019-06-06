@@ -1,4 +1,4 @@
 class Item < ApplicationRecord
-  validates_presence_of :first_photo, :second_photo
+  validates_presence_of :name
 
 end

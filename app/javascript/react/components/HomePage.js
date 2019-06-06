@@ -33,7 +33,6 @@ class HomePage extends Component {
   }
 
   render() {
-    console.log(this.state.items);
     let itemsArray = this.state.items.map(item => {
       return(
         <ItemTile
@@ -41,6 +40,10 @@ class HomePage extends Component {
           name= {item.name}
           firstPhoto= {item.first_photo}
           secondPhoto= {item.second_photo}
+          thirdPhoto= {item.third_photo}
+          fourthPhoto= {item.fourth_photo}
+          fifthPhoto= {item.fifth_photo}
+          sixthPhoto= {item.sixth_photo}
         />
       )
     })
