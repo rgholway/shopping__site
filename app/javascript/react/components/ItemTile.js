@@ -83,14 +83,17 @@ class ItemTile extends Component {
     return (
       <div className={`item--${this.state.active}`} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
         <img className="item__photo" src={this.state.selectedPhoto}/>
-        <div className={`item__name--${this.state.active}`}> {this.props.name} </div>
+        <div className={`item__name--${this.state.active}`}> {this.props.name}
+          <div className={`item__description--${this.state.active}`}> {this.props.description} </div>
+          <div className={`item__price--${this.state.active}`}> {this.props.price} </div>
+        </div>
         <div className={`other__photos--${this.state.active}`} >
-          <img className="small__photos" src={this.props.firstPhoto} onMouseEnter={this.handleFirstEnter} onMouseLeave={this.handleFirstLeave} />
-          <img className="small__photos" src={this.props.secondPhoto} onMouseEnter={this.handleSecondEnter} onMouseLeave={this.handleSecondLeave}/>
-          <img className="small__photos" src={this.props.thirdPhoto} onMouseEnter={this.handleThirdEnter} onMouseLeave={this.handleThirdLeave}/>
-          <img className="small__photos" src={this.props.fourthPhoto} onMouseEnter={this.handleFourthEnter} onMouseLeave={this.handleFourthLeave}/>
-          <img className="small__photos" src={this.props.fifthPhoto} onMouseEnter={this.handleFifthEnter} onMouseLeave={this.handleFifthLeave}/>
-          <img className="small__photos" src={this.props.sixthPhoto} onMouseEnter={this.handleSixthEnter} onMouseLeave={this.handleSixthLeave}/>
+          <img className="small__photos" src={this.props.firstPhoto} onMouseEnter={this.handleFirstEnter} onMouseLeave={this.handleFirstLeave} onClick={this.handleFirstEnter} />
+          <img className="small__photos" src={this.props.secondPhoto} onMouseEnter={this.handleSecondEnter} onMouseLeave={this.handleSecondLeave} onClick={this.handleSecondEnter}/>
+          <img className="small__photos" src={this.props.thirdPhoto} onMouseEnter={this.handleThirdEnter} onMouseLeave={this.handleThirdLeave} onClick={this.handleThirdEnter}/>
+          <img className="small__photos" src={this.props.fourthPhoto} onMouseEnter={this.handleFourthEnter} onMouseLeave={this.handleFourthLeave} onClick={this.handleFourthEnter}/>
+          <img className="small__photos" src={this.props.fifthPhoto} onMouseEnter={this.handleFifthEnter} onMouseLeave={this.handleFifthLeave} onClick={this.handleFifthEnter}/>
+          <img className="small__photos" src={this.props.sixthPhoto} onMouseEnter={this.handleSixthEnter} onMouseLeave={this.handleSixthLeave} onClick={this.handleSixthEnter}/>
         </div>
 
       </div>

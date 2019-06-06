@@ -2,6 +2,8 @@ class Item < ActiveRecord::Migration[5.2]
   def change
     create_table :items do |t|
       t.string :name, null: false
+      t.string :description
+      t.string :price
       t.string :first_photo
       t.string :second_photo
       t.string :third_photo
