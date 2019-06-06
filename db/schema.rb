@@ -16,9 +16,13 @@ ActiveRecord::Schema.define(version: 2019_06_01_180953) do
   enable_extension "plpgsql"
 
   create_table "items", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.string "first_photo"
     t.string "second_photo"
+    t.string "third_photo"
+    t.string "fourth_photo"
+    t.string "fifth_photo"
+    t.string "sixth_photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
