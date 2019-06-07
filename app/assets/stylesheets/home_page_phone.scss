@@ -87,4 +87,58 @@
   width: 90%;
   left: 5%;
 }
+
+.phone__menu-- {
+  position: fixed;
+  top: 45%;
+  right: 0%;
+  height: 15%;
+  width: 10%;
+  background: lightgrey;
+  cursor: pointer;
+}
+
+.phone__menu--active {
+  position: fixed;
+  top: 30%;
+  right: 0%;
+  height: 50%;
+  width: 25%;
+  background: lightgrey;
+  cursor: pointer;
+}
+
+.phone__menu__lines-- {
+  position: absolute;
+  top: 30%;
+  height: 50%;
+  width: 100%;
+  font-size: 5vw;
+  color: black;
+  text-align: center;
+}
+
+.active__menu__lines--active {
+  position: absolute;
+  top: 40%;
+  left: 0%;
+  height: 30%;
+  width: 30%;
+  font-size: 5vw;
+  color: black;
+  text-align: center;
+}
+
+.active__menu__lines-- {
+  height: 0%;
+  width: 0%;
+  overflow: hidden;
+}
+
+.phone__menu__lines--active {
+  height: 0%;
+  width: 0%;
+  overflow: hidden;
+}
+
 }
