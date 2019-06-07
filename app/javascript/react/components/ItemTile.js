@@ -95,7 +95,6 @@ class ItemTile extends Component {
           <img className="small__photos" src={this.props.fifthPhoto} onMouseEnter={this.handleFifthEnter} onMouseLeave={this.handleFifthLeave} onClick={this.handleFifthEnter}/>
           <img className="small__photos" src={this.props.sixthPhoto} onMouseEnter={this.handleSixthEnter} onMouseLeave={this.handleSixthLeave} onClick={this.handleSixthEnter}/>
         </div>
-
       </div>
     )
   }
