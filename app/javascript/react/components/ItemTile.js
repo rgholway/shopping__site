@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router';
 
 class ItemTile extends Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class ItemTile extends Component {
     this.handleFifthLeave = this.handleFifthLeave.bind(this)
     this.handleSixthEnter = this.handleSixthEnter.bind(this)
     this.handleSixthLeave = this.handleSixthLeave.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
   mouseEnter() {
@@ -79,9 +81,13 @@ class ItemTile extends Component {
     this.setState({selectedPhoto: this.props.firstPhoto})
   }
 
+  handleClick() {
+    browserHistory.push(`/items/${this.props.id}`)
+  }
+
   render() {
     return (
-      <div className={`item--${this.state.active}`} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
+      <div className={`item--${this.state.active}`} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave} onClick={this.handleClick}>
         <img className="item__photo" src={this.state.selectedPhoto}/>
         <div className={`item__name--${this.state.active}`}> {this.props.name}
           <div className={`item__description--${this.state.active}`}> {this.props.description} </div>

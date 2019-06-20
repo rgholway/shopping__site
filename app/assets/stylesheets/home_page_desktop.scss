@@ -28,6 +28,7 @@
   right: 2%;
   width: auto;
   height: auto;
+  color: #F2CBA6;
   font-family: 'Exo 2', sans-serif;
 }
 
@@ -37,6 +38,7 @@
   right: 2%;
   width: auto;
   height: auto;
+  color: #EFAE86;
   font-family: 'Exo 2', sans-serif;
 }
 
@@ -89,6 +91,7 @@
   border: solid 2px black;
   float: left;
   z-index: 12;
+  cursor: pointer;
 }
 
 .item:hover {
