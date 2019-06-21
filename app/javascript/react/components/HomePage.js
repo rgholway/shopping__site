@@ -49,6 +49,7 @@ class HomePage extends Component {
       return(
         <ItemTile
           key= {item.id}
+          id= {item.id}
           name= {item.name}
           firstPhoto= {item.first_photo}
           secondPhoto= {item.second_photo}

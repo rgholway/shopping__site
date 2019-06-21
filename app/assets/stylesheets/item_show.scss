@@ -1,0 +1,30 @@
+.item__main__photo {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  height: 60%;
+  width: 30%;
+  cursor: zoom-in;
+}
+
+.item__main__photo--active {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background:rgba(255,255,255, 0.5);
+}
+
+.show__photo {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.show__photo--active {
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  height: 80%;
+  width: 40%;
+  cursor: zoom-out;
+}
