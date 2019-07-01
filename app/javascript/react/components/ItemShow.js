@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import PhotoTile from "./PhotoTile"
 
 class ItemShow extends Component {
   constructor(props) {
     super(props);
     this.state = {
       active: "",
-      item: []
+      item: [],
+      photos: []
     }
     this.fetchItem = this.fetchItem.bind(this)
     this.handleClick = this.handleClick.bind(this)
@@ -24,7 +26,9 @@ class ItemShow extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      this.setState({ item: body });
+      let array = []
+      array.push(body.first_photo, body.second_photo, body.third_photo, body.fourth_photo, body.fifth_photo)
+      this.setState({ item: body, photos: array })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -43,10 +47,21 @@ class ItemShow extends Component {
   }
 
   render() {
+    let num = this.state.photos.length
+    let photosArray = this.state.photos.map(photo => {
+      num += 1
+      return(
+        <PhotoTile
+          key= {photo}
+          name= {photo}
+          length= {num}
+          />
+      )
+    })
     return (
       <div>
         <div className={`item__main__photo${this.state.active}`}>
-          <img className={`show__photo${this.state.active}`} src={this.state.item.first_photo} onClick={this.handleClick}/>
+          <img className={`show__photo${this.state.active}`}  src={this.state.item.first_photo} onClick={this.handleClick}/>
         </div>
       </div>
     )
