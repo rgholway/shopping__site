@@ -28,3 +28,19 @@
   width: 40%;
   cursor: zoom-out;
 }
+
+
+.right__picture--active {
+  position: absolute;
+  right: 10%;
+  height: 100%;
+  width: 5%;
+  color: red;
+}
+
+.right__picture {
+  position: absolute;
+  height: 0%;
+  width: 0%;
+  overflow: hidden;
+}
