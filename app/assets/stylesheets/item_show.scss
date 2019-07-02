@@ -30,12 +30,22 @@
 }
 
 
-.right__picture--active {
+.right__arrow {
   position: absolute;
   right: 10%;
   height: 100%;
   width: 5%;
   color: red;
+  cursor: pointer;
+}
+
+.left__arrow {
+  position: absolute;
+  left: 10%;
+  height: 100%;
+  width: 5%;
+  color: red;
+  cursor: pointer;
 }
 
 .right__picture {
