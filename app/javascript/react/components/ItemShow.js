@@ -14,7 +14,9 @@ class ItemShow extends Component {
     this.fetchItem = this.fetchItem.bind(this)
     this.handleClick = this.handleClick.bind(this)
     this.handleRight = this.handleRight.bind(this)
+    this.handleRightArrow = this.handleRightArrow.bind(this)
     this.handleLeft = this.handleLeft.bind(this)
+    this.handleKeyPress = this.handleKeyPress.bind(this)
   }
 
   fetchItem() {
@@ -61,6 +63,21 @@ class ItemShow extends Component {
     }
   }
 
+  handleRightArrow(selectedNumber) {
+    if (selectedNumber == 1) {
+    this.setState({activePhoto: this.state.item.second_photo, photoNumber: 2})
+    }
+    if (selectedNumber == 2) {
+    this.setState({activePhoto: this.state.item.third_photo, photoNumber: 3})
+    }
+    if (selectedNumber == 3) {
+    this.setState({activePhoto: this.state.item.fourth_photo, photoNumber: 4})
+    }
+    if (selectedNumber == 4) {
+    this.setState({activePhoto: this.state.item.fifth_photo, photoNumber: 5})
+    }
+  }
+
   handleLeft() {
     if (this.state.photoNumber == 2) {
     this.setState({activePhoto: this.state.item.first_photo, photoNumber: 1})
@@ -76,13 +93,24 @@ class ItemShow extends Component {
     }
   }
 
+  handleKeyPress() {
+    if (event.key == "ArrowRight") {
+      this.handleRightArrow(this.state.photoNumber)
+    }
+    if (event.key == "ArrowLeft") {
+      this.handleLeft()
+    }
+  }
+
   componentWillMount() {
     this.fetchItem()
+    document.addEventListener("keydown", this.handleKeyPress.bind(this));
     this.setState({photoNumber: 1})
   }
 
   render() {
-    console.log(e.keyCode);
+    console.log(this.state.photoNumber);
+    console.log(this.state.activePhoto);
     let num = this.state.photos.length
     let photosArray = this.state.photos.map(photo => {
       num += 1
@@ -100,7 +128,7 @@ class ItemShow extends Component {
         <div className={`item__main__photo${this.state.active}`}>
           <img className={`show__photo${this.state.active}`}  src={this.state.activePhoto} onClick={this.handleClick}/>
         </div>
-        <div className="right__arrow" onClick={this.handleRight}>Right </div>
+        <div className="right__arrow" onClick={this.handleRight} onKeyDown={this.handleKeyPress}>Right </div>
         <div className="left__arrow" onClick={this.handleLeft}>Left </div>
       </div>
     )
