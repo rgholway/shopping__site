@@ -37,6 +37,9 @@
   width: 5%;
   color: red;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .left__arrow {
@@ -46,6 +49,9 @@
   width: 5%;
   color: red;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .right__picture {
