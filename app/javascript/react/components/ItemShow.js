@@ -14,6 +14,7 @@ class ItemShow extends Component {
     this.fetchItem = this.fetchItem.bind(this)
     this.handleClick = this.handleClick.bind(this)
     this.handleRight = this.handleRight.bind(this)
+    this.handleEscape = this.handleEscape.bind(this)
     this.handleRightArrow = this.handleRightArrow.bind(this)
     this.handleLeft = this.handleLeft.bind(this)
     this.handleKeyPress = this.handleKeyPress.bind(this)
@@ -63,6 +64,10 @@ class ItemShow extends Component {
     }
   }
 
+  handleEscape() {
+    this.setState({active: ""})
+  }
+
   handleRightArrow(selectedNumber) {
     if (selectedNumber == 1) {
     this.setState({activePhoto: this.state.item.second_photo, photoNumber: 2})
@@ -94,11 +99,15 @@ class ItemShow extends Component {
   }
 
   handleKeyPress() {
+    console.log(event.key);
     if (event.key == "ArrowRight") {
       this.handleRightArrow(this.state.photoNumber)
     }
     if (event.key == "ArrowLeft") {
       this.handleLeft()
+    }
+    if (event.key == "Escape") {
+      this.handleEscape()
     }
   }
 
@@ -109,8 +118,7 @@ class ItemShow extends Component {
   }
 
   render() {
-    console.log(this.state.photoNumber);
-    console.log(this.state.activePhoto);
+    console.log(this.state.active);
     let num = this.state.photos.length
     let photosArray = this.state.photos.map(photo => {
       num += 1
@@ -128,8 +136,9 @@ class ItemShow extends Component {
         <div className={`item__main__photo${this.state.active}`}>
           <img className={`show__photo${this.state.active}`}  src={this.state.activePhoto} onClick={this.handleClick}/>
         </div>
-        <div className="right__arrow" onClick={this.handleRight} onKeyDown={this.handleKeyPress}>Right </div>
-        <div className="left__arrow" onClick={this.handleLeft}>Left </div>
+        <div className={`right__arrow${this.state.active}`} onClick={this.handleRight} onKeyDown={this.handleKeyPress}>Right </div>
+        <div className={`escape__key${this.state.active}`} onClick={this.handleEscape} onKeyDown={this.handleKeyPress}>X</div>
+        <div className={`left__arrow${this.state.active}`} onClick={this.handleLeft}>Left </div>
       </div>
     )
   }
