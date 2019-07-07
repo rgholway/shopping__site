@@ -30,7 +30,7 @@
 }
 
 
-.right__arrow {
+.right__arrow--active {
   position: absolute;
   right: 10%;
   height: 100%;
@@ -42,7 +42,37 @@
   -ms-user-select: none;
 }
 
+.escape__key--active {
+  position: absolute;
+  left: 0%;
+  height: 100%;
+  width: 5%;
+  color: red;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.right__arrow {
+  height: 0%;
+  width: 0%;
+  overflow: hidden;
+}
+
 .left__arrow {
+  height: 0%;
+  width: 0%;
+  overflow: hidden;
+}
+
+.escape__key {
+  height: 0%;
+  width: 0%;
+  overflow: hidden;
+}
+
+.left__arrow--active {
   position: absolute;
   left: 10%;
   height: 100%;
