@@ -6,10 +6,14 @@ class HomePage extends Component {
     super(props);
     this.state = {
       items: [],
-      menuActive: ""
+      menuActive: "",
+      numbers: "three"
     }
     this.fetchItems = this.fetchItems.bind(this)
     this.handleMenuClick = this.handleMenuClick.bind(this)
+    this.handleTwo = this.handleTwo.bind(this)
+    this.handleThree = this.handleThree.bind(this)
+    this.handleFour = this.handleFour.bind(this)
     this.handleCloseMenuClick = this.handleCloseMenuClick.bind(this)
   }
 
@@ -39,12 +43,23 @@ class HomePage extends Component {
     this.setState({menuActive: "active"})
   }
 
+  handleTwo() {
+    this.setState({numbers: "two"})
+  }
+
+  handleThree() {
+    this.setState({numbers: "three"})
+  }
+
+  handleFour() {
+    this.setState({numbers: "four"})
+  }
+
   handleCloseMenuClick() {
     this.setState({menuActive: ""})
   }
 
   render() {
-    console.log(this.state.menuActive);
     let itemsArray = this.state.items.map(item => {
       return(
         <ItemTile
@@ -59,6 +74,7 @@ class HomePage extends Component {
           sixthPhoto= {item.sixth_photo}
           description= {item.description}
           price= {item.price}
+          number= {this.state.numbers}
         />
       )
     })
@@ -71,6 +87,11 @@ class HomePage extends Component {
           <div className={`phone__menu--${this.state.menuActive}`}>
             <h1 className={`phone__menu__lines--${this.state.menuActive}`} onClick={this.handleMenuClick}>|||</h1>
             <h1 className={`active__menu__lines--${this.state.menuActive}`} onClick={this.handleCloseMenuClick}>|||</h1>
+          </div>
+          <div className="items__number">
+            <div className="number__3" onClick={this.handleTwo}>2</div>
+            <div className="number__2" onClick={this.handleThree}>3</div>
+            <div className="number__4" onClick={this.handleFour}>4</div>
           </div>
         </div>
     )

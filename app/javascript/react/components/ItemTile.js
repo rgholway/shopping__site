@@ -87,7 +87,7 @@ class ItemTile extends Component {
 
   render() {
     return (
-      <div className={`item--${this.state.active}`} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave} onClick={this.handleClick}>
+      <div className={`${this.props.number}--${this.state.active}`} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave} onClick={this.handleClick}>
         <img className="item__photo" src={this.state.selectedPhoto}/>
         <div className={`item__name--${this.state.active}`}> {this.props.name}
           <div className={`item__description--${this.state.active}`}> {this.props.description} </div>
