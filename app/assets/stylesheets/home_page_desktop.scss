@@ -10,6 +10,32 @@
   z-index: 12;
 }
 
+.items__number {
+  position: absolute;
+  top: 40%;
+  left: 5%;
+  height: 10%;
+  width: 20%;
+  background: red;
+  z-index: 20;
+}
+
+.number__3 {
+  position: absolute;
+  top: 5%;
+  height: 90%;
+  width: 40%;
+  left: 5%;
+}
+
+.number__2 {
+  position: absolute;
+  top: 5%;
+  height: 90%;
+  width: 40%;
+  left: 50%;
+}
+
 .item__name--active {
   position: absolute;
   bottom: -25%;
@@ -67,7 +93,7 @@
   font-family: 'Exo 2', sans-serif;
 }
 
-.item-- {
+.three-- {
   position: relative;
   left: 5%;
   margin-left: 7%;
@@ -78,9 +104,10 @@
   border: solid 2px #DDDDDD;
   float: left;
   z-index: 11;
+  animation: rollout .75s forwards;
 }
 
-.item--active {
+.three--active {
   position: relative;
   left: 5%;
   margin-left: 7%;
@@ -92,6 +119,64 @@
   float: left;
   z-index: 12;
   cursor: pointer;
+  animation: rollout .75s forwards;
+}
+
+.two-- {
+  position: relative;
+  left: 5%;
+  margin-left: 7%;
+  margin-bottom: 8%;
+  height: 400px;
+  width: 400px;
+  background: lightgrey;
+  border: solid 2px #DDDDDD;
+  float: left;
+  z-index: 11;
+  animation: rollout .75s forwards;
+}
+
+.two--active {
+  position: relative;
+  left: 5%;
+  margin-left: 7%;
+  margin-bottom: 8%;
+  height: 400px;
+  width: 400px;
+  background: lightgrey;
+  border: solid 2px black;
+  float: left;
+  z-index: 12;
+  cursor: pointer;
+}
+
+.four-- {
+  position: relative;
+  left: 5%;
+  margin-left: 7%;
+  margin-bottom: 8%;
+  height: 180px;
+  width: 180px;
+  background: lightgrey;
+  border: solid 2px #DDDDDD;
+  float: left;
+  z-index: 11;
+  animation: rollout .75s forwards;
+}
+
+.four--active {
+  position: relative;
+  left: 5%;
+  margin-left: 7%;
+  margin-bottom: 8%;
+  height: 180px;
+  width: 180px;
+  background: lightgrey;
+  border: solid 2px black;
+  float: left;
+  z-index: 12;
+  cursor: pointer;
+  animation: rollout .75s forwards;
 }
 
 .item:hover {
@@ -171,4 +256,13 @@
   background: #D3D3D3;
   font-family: 'Exo 2', sans-serif;
   z-index: 20;
+}
+
+@keyframes rollout {
+    from {
+        left: 0%;
+    }
+    to {
+      left: 5%;
+    }
 }
