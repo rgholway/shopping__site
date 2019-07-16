@@ -32,10 +32,12 @@
 
 .right__arrow--active {
   position: absolute;
-  right: 10%;
+  right: 0%;
   height: 100%;
   width: 5%;
-  color: red;
+  color: black;
+  background: white;
+  border: solid .5px black;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -47,11 +49,13 @@
   left: 0%;
   height: 100%;
   width: 5%;
-  color: red;
+  border: solid .5px black;
+  color: black;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  z-index: 10;
 }
 
 .right__arrow {
@@ -74,10 +78,12 @@
 
 .left__arrow--active {
   position: absolute;
-  left: 10%;
+  left: 0%;
   height: 100%;
   width: 5%;
-  color: red;
+  color: black;
+  background: white;
+  border: solid .5px black;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;

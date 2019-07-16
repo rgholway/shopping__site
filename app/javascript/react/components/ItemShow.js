@@ -136,9 +136,9 @@ class ItemShow extends Component {
         <div className={`item__main__photo${this.state.active}`}>
           <img className={`show__photo${this.state.active}`}  src={this.state.activePhoto} onClick={this.handleClick}/>
         </div>
-        <div className={`right__arrow${this.state.active}`} onClick={this.handleRight} onKeyDown={this.handleKeyPress}>Right </div>
+        <div className={`right__arrow${this.state.active}`} onClick={this.handleRight} onKeyDown={this.handleKeyPress}>{`>`}</div>
         <div className={`escape__key${this.state.active}`} onClick={this.handleEscape} onKeyDown={this.handleKeyPress}>X</div>
-        <div className={`left__arrow${this.state.active}`} onClick={this.handleLeft}>Left </div>
+        <div className={`left__arrow${this.state.active}`} onClick={this.handleLeft}>{`<`}</div>
       </div>
     )
   }
