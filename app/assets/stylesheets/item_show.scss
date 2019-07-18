@@ -1,7 +1,7 @@
 .item__main__photo {
   position: absolute;
   top: 20%;
-  left: 10%;
+  left: 5%;
   height: 60%;
   width: 30%;
   cursor: zoom-in;
@@ -12,6 +12,93 @@
   height: 100%;
   width: 100%;
   background:rgba(255,255,255, 0.5);
+  z-index: 20;
+}
+
+.item__main__name {
+  position: absolute;
+  height: auto;
+  width: auto;
+  left: 55%;
+  top: 20%;
+  font-size: 5vmin;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.diechi {
+  position: absolute;
+  height: auto;
+  width: 100%;
+  font-family: 'Exo 2', sans-serif;
+  font-style: bold;
+  font-size: 5vmin;
+  top: 3%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.arrow__keys {
+  position: absolute;
+  top: 83%;
+  left: 12%;
+  height: auto;
+  width: auto;
+  color: lightgrey;
+  font-size: 2vmin;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.buy__now {
+  position: absolute;
+  left: 55%;
+  top: 45%;
+  width: 20%;
+  height: 10%;
+  background: #F2CBA6;
+  color: white;
+  text-align: center;
+  font-size: 3vmin;
+}
+
+.buy__now__text {
+  position: absolute;
+  top: 15%;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-size: 3vmin;
+}
+
+.buy__now__text--hover {
+  position: absolute;
+  top: 15%;
+  width: 100%;
+  text-align: center;
+  font-size: 3vmin;
+  background: white;
+  color: #F2CBA6;
+}
+
+.buy__now:hover {
+  background: white;
+  border: solid 1px #F2CBA6;
+}
+
+.price {
+  color: #F2CBA6;
+  float: right;
+  font-size: 5vmin;
+  margin-left: 80px;
+}
+
+.item__main__description {
+  position: absolute;
+  height: auto;
+  width: 30%;
+  left: 55%;
+  top: 30%;
+  font-size: 4vmin;
+  font-family: 'Exo 2', sans-serif;
 }
 
 .show__photo {
