@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PhotoTile from "./PhotoTile"
+import { browserHistory } from 'react-router';
 
 class ItemShow extends Component {
   constructor(props) {
@@ -9,7 +10,8 @@ class ItemShow extends Component {
       activePhoto: "",
       photoNumber: "",
       item: [],
-      photos: []
+      photos: [],
+      buyActive: ""
     }
     this.fetchItem = this.fetchItem.bind(this)
     this.handleClick = this.handleClick.bind(this)
@@ -18,6 +20,9 @@ class ItemShow extends Component {
     this.handleRightArrow = this.handleRightArrow.bind(this)
     this.handleLeft = this.handleLeft.bind(this)
     this.handleKeyPress = this.handleKeyPress.bind(this)
+    this.goHome = this.goHome.bind(this)
+    this.buyNowEnter = this.buyNowEnter.bind(this)
+    this.buyNowLeave = this.buyNowLeave.bind(this)
   }
 
   fetchItem() {
@@ -47,6 +52,10 @@ class ItemShow extends Component {
     if (this.state.active == "--active") {
     this.setState({active: ""})
     }
+  }
+
+  goHome() {
+    browserHistory.push('/')
   }
 
   handleRight() {
@@ -98,6 +107,14 @@ class ItemShow extends Component {
     }
   }
 
+  buyNowEnter() {
+    this.setState({buyActive: "--hover"})
+  }
+
+  buyNowLeave() {
+    this.setState({buyActive: ""})
+  }
+
   handleKeyPress() {
     console.log(event.key);
     if (event.key == "ArrowRight") {
@@ -136,6 +153,11 @@ class ItemShow extends Component {
         <div className={`item__main__photo${this.state.active}`}>
           <img className={`show__photo${this.state.active}`}  src={this.state.activePhoto} onClick={this.handleClick}/>
         </div>
+        <div className="item__main__name">{this.state.item.name} <h6 className="price">{this.state.item.price}</h6></div>
+        <div className="diechi" onClick={this.goHome}>Diechi</div>
+        <div className="arrow__keys">Use Arrow Keys to View Photos</div>
+        <div className="buy__now" onMouseEnter={this.buyNowEnter} onMouseLeave={this.buyNowLeave}><h6 className={`buy__now__text${this.state.buyActive}`}>Buy Now</h6></div>
+        <div className="item__main__description">{this.state.item.description}</div>
         <div className={`right__arrow${this.state.active}`} onClick={this.handleRight} onKeyDown={this.handleKeyPress}>{`>`}</div>
         <div className={`escape__key${this.state.active}`} onClick={this.handleEscape} onKeyDown={this.handleKeyPress}>X</div>
         <div className={`left__arrow${this.state.active}`} onClick={this.handleLeft}>{`<`}</div>
