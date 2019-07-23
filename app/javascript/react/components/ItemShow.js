@@ -11,7 +11,8 @@ class ItemShow extends Component {
       photoNumber: "",
       item: [],
       photos: [],
-      buyActive: ""
+      buyActive: "",
+      cartActive: ""
     }
     this.fetchItem = this.fetchItem.bind(this)
     this.handleClick = this.handleClick.bind(this)
@@ -22,6 +23,8 @@ class ItemShow extends Component {
     this.handleKeyPress = this.handleKeyPress.bind(this)
     this.goHome = this.goHome.bind(this)
     this.buyNowEnter = this.buyNowEnter.bind(this)
+    this.addCartEnter = this.addCartEnter.bind(this)
+    this.addCartLeave = this.addCartLeave.bind(this)
     this.buyNowLeave = this.buyNowLeave.bind(this)
   }
 
@@ -71,6 +74,9 @@ class ItemShow extends Component {
     if (this.state.photoNumber == 4) {
     this.setState({activePhoto: this.state.item.fifth_photo, photoNumber: 5})
     }
+    if (this.state.photoNumber == 5) {
+      this.setState({activePhoto: this.state.item.first_photo, photoNumber: 1})
+    }
   }
 
   handleEscape() {
@@ -90,6 +96,10 @@ class ItemShow extends Component {
     if (selectedNumber == 4) {
     this.setState({activePhoto: this.state.item.fifth_photo, photoNumber: 5})
     }
+    if (selectedNumber == 5) {
+    this.setState({activePhoto: this.state.item.fifth_photo, photoNumber: 1})
+    }
+
   }
 
   handleLeft() {
@@ -111,12 +121,19 @@ class ItemShow extends Component {
     this.setState({buyActive: "--hover"})
   }
 
+  addCartEnter() {
+    this.setState({cartActive: "--cartHover"})
+  }
+
   buyNowLeave() {
     this.setState({buyActive: ""})
   }
 
+  addCartLeave() {
+    this.setState({cartActive: ""})
+  }
+
   handleKeyPress() {
-    console.log(event.key);
     if (event.key == "ArrowRight") {
       this.handleRightArrow(this.state.photoNumber)
     }
@@ -135,7 +152,7 @@ class ItemShow extends Component {
   }
 
   render() {
-    console.log(this.state.active);
+    console.log(this.state.cartActive)
     let num = this.state.photos.length
     let photosArray = this.state.photos.map(photo => {
       num += 1
@@ -157,6 +174,7 @@ class ItemShow extends Component {
         <div className="diechi" onClick={this.goHome}>Diechi</div>
         <div className="arrow__keys">Use Arrow Keys to View Photos</div>
         <div className="buy__now" onMouseEnter={this.buyNowEnter} onMouseLeave={this.buyNowLeave}><h6 className={`buy__now__text${this.state.buyActive}`}>Buy Now</h6></div>
+        <div className="add__cart" onMouseEnter={this.addCartEnter} onMouseLeave={this.addCartLeave}><h6 className={`add__cart__text${this.state.cartActive}`}>Add To Cart</h6></div>
         <div className="item__main__description">{this.state.item.description}</div>
         <div className={`right__arrow${this.state.active}`} onClick={this.handleRight} onKeyDown={this.handleKeyPress}>{`>`}</div>
         <div className={`escape__key${this.state.active}`} onClick={this.handleEscape} onKeyDown={this.handleKeyPress}>X</div>
