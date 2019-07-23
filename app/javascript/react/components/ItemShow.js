@@ -12,7 +12,9 @@ class ItemShow extends Component {
       item: [],
       photos: [],
       buyActive: "",
-      cartActive: ""
+      cartActive: "",
+      cartItems: "0",
+      heh: ""
     }
     this.fetchItem = this.fetchItem.bind(this)
     this.handleClick = this.handleClick.bind(this)
@@ -26,6 +28,8 @@ class ItemShow extends Component {
     this.addCartEnter = this.addCartEnter.bind(this)
     this.addCartLeave = this.addCartLeave.bind(this)
     this.buyNowLeave = this.buyNowLeave.bind(this)
+    this.addToCart = this.addToCart.bind(this)
+    this.fetchCart = this.fetchCart.bind(this)
   }
 
   fetchItem() {
@@ -145,8 +149,43 @@ class ItemShow extends Component {
     }
   }
 
+  addToCart() {
+    fetch(`/api/v1/carts/1`, {
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json' },
+        credentials: 'same-origin'
+      })
+      this.setState({heh: "reload please"}, () => {this.newItem()})
+  }
+
+  newItem() {
+    let num = (this.state.cartItems + 1)
+    this.setState({cartItems: num})
+  }
+
+  fetchCart() {
+    fetch(`/api/v1/carts/1`)
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      this.setState({ cartItems: body })
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
+
   componentWillMount() {
     this.fetchItem()
+    this.fetchCart()
     document.addEventListener("keydown", this.handleKeyPress.bind(this));
     this.setState({photoNumber: 1})
   }
@@ -174,11 +213,15 @@ class ItemShow extends Component {
         <div className="diechi" onClick={this.goHome}>Diechi</div>
         <div className="arrow__keys">Use Arrow Keys to View Photos</div>
         <div className="buy__now" onMouseEnter={this.buyNowEnter} onMouseLeave={this.buyNowLeave}><h6 className={`buy__now__text${this.state.buyActive}`}>Buy Now</h6></div>
-        <div className="add__cart" onMouseEnter={this.addCartEnter} onMouseLeave={this.addCartLeave}><h6 className={`add__cart__text${this.state.cartActive}`}>Add To Cart</h6></div>
+        <div className="add__cart" onClick={this.addToCart} onMouseEnter={this.addCartEnter} onMouseLeave={this.addCartLeave}><h6 className={`add__cart__text${this.state.cartActive}`}>Add To Cart</h6></div>
         <div className="item__main__description">{this.state.item.description}</div>
         <div className={`right__arrow${this.state.active}`} onClick={this.handleRight} onKeyDown={this.handleKeyPress}>{`>`}</div>
         <div className={`escape__key${this.state.active}`} onClick={this.handleEscape} onKeyDown={this.handleKeyPress}>X</div>
         <div className={`left__arrow${this.state.active}`} onClick={this.handleLeft}>{`<`}</div>
+        <div className="cart">
+          <img className="shopping__cart" src='https://img.icons8.com/office,office40/2x/shopping-cart.png'></img>
+          <div className="cart__number"><h6 className="number__text">{this.state.cartItems}</h6></div>
+        </div>
       </div>
     )
   }

@@ -214,6 +214,44 @@
   -ms-user-select: none;
 }
 
+.cart {
+  position: absolute;
+  right: 1%;
+  top: 2%;
+  height: 8vmin;
+  width: 12vmin;
+  cursor: pointer;
+}
+
+.shopping__cart {
+  max-width: 100%;
+  max-height: 100%;
+  background-position: top center;
+}
+
+.cart__number {
+  position: absolute;
+  right: 20%;
+  top: 5%;
+  height: 3vmin;
+  width: 3vmin;
+  color: black;
+  background: white;
+  border: solid 1px black;
+  border-radius: 100%;
+  z-index: 20;
+}
+
+.number__text {
+  position: absolute;
+  top: -20%;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 2vmin;
+  font-family: 'Exo 2', sans-serif;
+}
+
 .right__picture {
   position: absolute;
   height: 0%;
