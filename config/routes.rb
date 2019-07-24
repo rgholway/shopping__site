@@ -10,4 +10,5 @@ end
 
 root 'homes#index'
 get 'items/:id', to: 'homes#index'
+get 'cart/:id', to: 'homes#index'
 end
