@@ -11,7 +11,6 @@ class Item < ActiveRecord::Migration[5.2]
       t.string :fifth_photo
       t.string :sixth_photo
 
-
       t.timestamps null: false
     end
   end

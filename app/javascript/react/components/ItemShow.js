@@ -30,6 +30,7 @@ class ItemShow extends Component {
     this.buyNowLeave = this.buyNowLeave.bind(this)
     this.addToCart = this.addToCart.bind(this)
     this.fetchCart = this.fetchCart.bind(this)
+    this.cartLink = this.cartLink.bind(this)
   }
 
   fetchItem() {
@@ -59,6 +60,10 @@ class ItemShow extends Component {
     if (this.state.active == "--active") {
     this.setState({active: ""})
     }
+  }
+
+  cartLink() {
+    browserHistory.push('/cart/1')
   }
 
   goHome() {
@@ -150,8 +155,10 @@ class ItemShow extends Component {
   }
 
   addToCart() {
+    let jsonInfo = JSON.stringify({item: this.state.item})
     fetch(`/api/v1/carts/1`, {
       method: 'PUT',
+      body: jsonInfo,
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json' },
@@ -161,8 +168,15 @@ class ItemShow extends Component {
   }
 
   newItem() {
-    let num = (this.state.cartItems + 1)
-    this.setState({cartItems: num})
+    if (this.state.cartItems != 0) {
+      let integer = parseFloat(this.state.cartItems)
+      let num = (integer + 1)
+      this.setState({cartItems: num})
+  }
+    if (this.state.cartItems == 0) {
+      let num = (this.state.cartItems + 1)
+      this.setState({cartItems: num})
+    }
   }
 
   fetchCart() {
@@ -178,7 +192,7 @@ class ItemShow extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      this.setState({ cartItems: body })
+      this.setState({ cartItems: body[0] })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -222,7 +236,7 @@ class ItemShow extends Component {
         <div className={`left__arrow${this.state.active}`} onClick={this.handleLeft}>
           <h6 className={`left__arrow__text${this.state.active}`}>{`<`}</h6>
         </div>
-        <div className="cart">
+        <div className="cart" onClick={this.cartLink}>
           <img className="shopping__cart" src='https://img.icons8.com/office,office40/2x/shopping-cart.png'></img>
           <div className="cart__number"><h6 className="number__text">{this.state.cartItems}</h6></div>
         </div>

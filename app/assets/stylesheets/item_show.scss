@@ -77,6 +77,7 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  cursor: pointer;
 }
 
 .buy__now__text {
@@ -89,6 +90,7 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  cursor: pointer;
 }
 
 .buy__now__text--hover {
@@ -102,6 +104,7 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  cursor: pointer;
 }
 
 .buy__now:hover {
@@ -110,6 +113,7 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  cursor: pointer;
 }
 
 .add__cart {
@@ -126,6 +130,7 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  cursor: pointer;
 }
 
 .add__cart:hover {
@@ -134,6 +139,7 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  cursor: pointer;
 }
 
 .add__cart__text {
@@ -146,6 +152,7 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  cursor: pointer;
 }
 
 .add__cart__text--cartHover {
@@ -159,6 +166,7 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  cursor: pointer;
 }
 
 .price {
@@ -226,7 +234,7 @@
   width: 100%;
   text-align: right;
   font-family: 'Exo 2', sans-serif;
-  font-size: 15vmin;
+  font-size: 10vmin;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -249,7 +257,7 @@
   width: 100%;
   text-align: left;
   font-family: 'Exo 2', sans-serif;
-  font-size: 15vmin;
+  font-size: 10vmin;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -279,7 +287,7 @@
   z-index: 31;
   text-align: right;
   font-family: 'Exo 2', sans-serif;
-  font-size: 8vmin;
+  font-size: 5vmin;
 }
 
 .right__arrow {

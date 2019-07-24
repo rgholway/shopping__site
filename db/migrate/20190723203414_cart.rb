@@ -2,7 +2,7 @@ class Cart < ActiveRecord::Migration[5.2]
   def change
     create_table :carts do |t|
       t.string :number
-
+      t.string :items, array: true, default: []
 
       t.timestamps null: false
     end
