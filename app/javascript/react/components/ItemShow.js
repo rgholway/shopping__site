@@ -215,9 +215,13 @@ class ItemShow extends Component {
         <div className="buy__now" onMouseEnter={this.buyNowEnter} onMouseLeave={this.buyNowLeave}><h6 className={`buy__now__text${this.state.buyActive}`}>Buy Now</h6></div>
         <div className="add__cart" onClick={this.addToCart} onMouseEnter={this.addCartEnter} onMouseLeave={this.addCartLeave}><h6 className={`add__cart__text${this.state.cartActive}`}>Add To Cart</h6></div>
         <div className="item__main__description">{this.state.item.description}</div>
-        <div className={`right__arrow${this.state.active}`} onClick={this.handleRight} onKeyDown={this.handleKeyPress}>{`>`}</div>
+        <div className={`right__arrow${this.state.active}`} onClick={this.handleRight} onKeyDown={this.handleKeyPress}>
+          <h6 className={`right__arrow__text${this.state.active}`}>{`>`}</h6>
+        </div>
         <div className={`escape__key${this.state.active}`} onClick={this.handleEscape} onKeyDown={this.handleKeyPress}>X</div>
-        <div className={`left__arrow${this.state.active}`} onClick={this.handleLeft}>{`<`}</div>
+        <div className={`left__arrow${this.state.active}`} onClick={this.handleLeft}>
+          <h6 className={`left__arrow__text${this.state.active}`}>{`<`}</h6>
+        </div>
         <div className="cart">
           <img className="shopping__cart" src='https://img.icons8.com/office,office40/2x/shopping-cart.png'></img>
           <div className="cart__number"><h6 className="number__text">{this.state.cartItems}</h6></div>
