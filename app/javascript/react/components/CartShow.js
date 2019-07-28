@@ -25,6 +25,7 @@ class CartShow extends Component {
     })
     .then(response => response.json())
     .then(body => {
+      debugger;
       this.setState({ totalItems: body[0], items: body[1] })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -35,7 +36,6 @@ class CartShow extends Component {
   }
 
   render() {
-    debugger;
     let num = 0
     let itemsArray = this.state.items.map(item => {
       num += 1
@@ -50,7 +50,13 @@ class CartShow extends Component {
       )
     })
       return(
-          <div> {itemsArray} </div>
+        <div>
+          <div className="cart__title">My Cart</div>
+          <div className="cart__background">
+            <div className="cart__name">Mac Shoes</div>
+            <img className="cart__image" src="https://www.diadora.com/on/demandware.static/-/Sites-diadora-master/default/dw5b09e22a/images/hi-res/201.158569_C1494_01_HR.jpg"/>
+          </div>
+        </div>
       )
     }
   }
