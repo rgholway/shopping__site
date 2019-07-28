@@ -155,28 +155,21 @@ class ItemShow extends Component {
   }
 
   addToCart() {
-    let jsonInfo = JSON.stringify({item: this.state.item})
+    let jsonInfo = {item: this.state.item}
     fetch(`/api/v1/carts/1`, {
       method: 'PUT',
       body: jsonInfo,
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json' },
+        'Accept': 'application/json'},
         credentials: 'same-origin'
       })
       this.setState({heh: "reload please"}, () => {this.newItem()})
   }
 
   newItem() {
-    if (this.state.cartItems != 0) {
       let integer = parseFloat(this.state.cartItems)
       let num = (integer + 1)
       this.setState({cartItems: num})
-  }
-    if (this.state.cartItems == 0) {
-      let num = (this.state.cartItems + 1)
-      this.setState({cartItems: num})
-    }
   }
 
   fetchCart() {

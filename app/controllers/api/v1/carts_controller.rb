@@ -3,7 +3,7 @@ class Api::V1::CartsController < ApplicationController
 
   def show
     cart = Cart.find(params["id"])
-    render json: [cart.number, cart.items]
+    render json: [cart.number, cart.items[3]]
   end
 
   def update

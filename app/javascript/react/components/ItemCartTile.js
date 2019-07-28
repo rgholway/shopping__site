@@ -9,10 +9,10 @@ class ItemCartTile extends Component {
   }
 
   render() {
-    console.log(this.props.name);
       return(
-        <div>{this.props.name}{this.props.description}
-          <img src={this.props.photo}/>
+        <div>
+          <div className="title">MY CART</div>
+          <div className="cart"></div>
         </div>
       )
     }
