@@ -12,28 +12,212 @@
 
 .items__number {
   position: absolute;
-  top: 40%;
+  top: 10%;
   left: 5%;
-  height: 10%;
-  width: 20%;
-  background: red;
+  height: 7%;
+  width: 40vmin;
   z-index: 20;
-}
-
-.number__3 {
-  position: absolute;
-  top: 5%;
-  height: 90%;
-  width: 40%;
-  left: 5%;
 }
 
 .number__2 {
   position: absolute;
   top: 5%;
   height: 90%;
+  width: 10vmin;
+  left: 3.33%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.bars__2--first {
+  position: absolute;
+  top: 5%;
+  left: 8%;
+  height: 90%;
   width: 40%;
-  left: 50%;
+  border: solid 1px black;
+}
+
+.bars__2--first--selectedtwo {
+  position: absolute;
+  top: 5%;
+  left: 8%;
+  height: 90%;
+  width: 40%;
+  background: grey;
+  border: solid 1px black;
+}
+
+.bars__2--second {
+  position: absolute;
+  top: 5%;
+  left: 53%;
+  height: 90%;
+  width: 40%;
+  border: solid 1px black;
+}
+
+.bars__2--second--selectedtwo {
+  position: absolute;
+  top: 5%;
+  left: 53%;
+  height: 90%;
+  width: 40%;
+  background: grey;
+  border: solid 1px black;
+}
+
+.number__3 {
+  position: absolute;
+  top: 5%;
+  left: 33.33%;
+  height: 90%;
+  width: 10vmin;
+  text-align: center;
+  cursor: pointer;
+}
+
+.bars__3--first {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  height: 90%;
+  width: 27%;
+  border: solid 1px black;
+}
+
+.bars__3--first--selectedthree {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  height: 90%;
+  width: 27%;
+  background: grey;
+  border: solid 1px black;
+}
+
+.bars__3--second {
+  position: absolute;
+  top: 5%;
+  left: 37%;
+  height: 90%;
+  width: 27%;
+  border: solid 1px black;
+}
+
+.bars__3--second--selectedthree {
+  position: absolute;
+  top: 5%;
+  left: 37%;
+  height: 90%;
+  width: 27%;
+  background: grey;
+  border: solid 1px black;
+}
+
+.bars__3--third {
+  position: absolute;
+  top: 5%;
+  left: 69%;
+  height: 90%;
+  width: 27%;
+  border: solid 1px black;
+}
+
+.bars__3--third--selectedthree {
+  position: absolute;
+  top: 5%;
+  left: 69%;
+  height: 90%;
+  width: 27%;
+  background: grey;
+  border: solid 1px black;
+}
+
+.bars__4--first {
+  position: absolute;
+  top: 5%;
+  left: 3%;
+  height: 90%;
+  width: 20%;
+  border: solid 1px black;
+}
+
+.bars__4--first--selectedfour {
+  position: absolute;
+  top: 5%;
+  left: 3%;
+  height: 90%;
+  width: 20%;
+  background: grey;
+  border: solid 1px black;
+}
+
+.bars__4--second {
+  position: absolute;
+  top: 5%;
+  left: 26%;
+  height: 90%;
+  width: 20%;
+  border: solid 1px black;
+}
+
+.bars__4--second--selectedfour {
+  position: absolute;
+  top: 5%;
+  left: 26%;
+  height: 90%;
+  width: 20%;
+  background: grey;
+  border: solid 1px black;
+}
+
+.bars__4--third {
+  position: absolute;
+  top: 5%;
+  left: 49%;
+  height: 90%;
+  width: 20%;
+  border: solid 1px black;
+}
+
+.bars__4--third--selectedfour {
+  position: absolute;
+  top: 5%;
+  left: 49%;
+  height: 90%;
+  width: 20%;
+  background: grey;
+  border: solid 1px black;
+}
+
+.bars__4--fourth {
+  position: absolute;
+  top: 5%;
+  left: 72%;
+  height: 90%;
+  width: 20%;
+  border: solid 1px black;
+}
+
+.bars__4--fourth--selectedfour {
+  position: absolute;
+  top: 5%;
+  left: 72%;
+  height: 90%;
+  width: 20%;
+  background: grey;
+  border: solid 1px black;
+}
+
+.number__4 {
+  position: absolute;
+  top: 5%;
+  left: 63.67%;
+  height: 90%;
+  width: 10vmin;
+  text-align: center;
+  cursor: pointer;
 }
 
 .item__name--active {

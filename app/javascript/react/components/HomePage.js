@@ -7,7 +7,10 @@ class HomePage extends Component {
     this.state = {
       items: [],
       menuActive: "",
-      numbers: "three"
+      numbers: "three",
+      selectedTwo: "",
+      selectedThree: "--selectedthree",
+      selectedFour : ""
     }
     this.fetchItems = this.fetchItems.bind(this)
     this.handleMenuClick = this.handleMenuClick.bind(this)
@@ -44,15 +47,15 @@ class HomePage extends Component {
   }
 
   handleTwo() {
-    this.setState({numbers: "two"})
+    this.setState({numbers: "two", selectedTwo: "--selectedtwo", selectedThree: "", selectedFour: ""})
   }
 
   handleThree() {
-    this.setState({numbers: "three"})
+    this.setState({numbers: "three", selectedTwo: "", selectedThree: "--selectedthree", selectedFour: ""})
   }
 
   handleFour() {
-    this.setState({numbers: "four"})
+    this.setState({numbers: "four", selectedFour: "--selectedfour", selectedThree: "", selectedTwo: ""})
   }
 
   handleCloseMenuClick() {
@@ -89,9 +92,21 @@ class HomePage extends Component {
             <h1 className={`active__menu__lines--${this.state.menuActive}`} onClick={this.handleCloseMenuClick}>|||</h1>
           </div>
           <div className="items__number">
-            <div className="number__3" onClick={this.handleTwo}>2</div>
-            <div className="number__2" onClick={this.handleThree}>3</div>
-            <div className="number__4" onClick={this.handleFour}>4</div>
+            <div className="number__3" onClick={this.handleThree}>
+              <div className={`bars__3--first${this.state.selectedThree}`}></div>
+              <div className={`bars__3--second${this.state.selectedThree}`}></div>
+              <div className={`bars__3--third${this.state.selectedThree}`}></div>
+            </div>
+            <div className="number__2" onClick={this.handleTwo}>
+              <div className={`bars__2--first${this.state.selectedTwo}`}></div>
+              <div className={`bars__2--second${this.state.selectedTwo}`}></div>
+            </div>
+            <div className="number__4" onClick={this.handleFour}>
+              <div className={`bars__4--first${this.state.selectedFour}`}></div>
+              <div className={`bars__4--second${this.state.selectedFour}`}></div>
+              <div className={`bars__4--third${this.state.selectedFour}`}></div>
+              <div className={`bars__4--fourth${this.state.selectedFour}`}></div>
+            </div>
           </div>
         </div>
     )
