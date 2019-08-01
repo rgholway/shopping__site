@@ -155,10 +155,8 @@ class ItemShow extends Component {
   }
 
   addToCart() {
-    let jsonInfo = {item: this.state.item}
-    fetch(`/api/v1/carts/1`, {
+    fetch(`/api/v1/carts/${this.state.item.id}`, {
       method: 'PUT',
-      body: jsonInfo,
       headers: {
         'Accept': 'application/json'},
         credentials: 'same-origin'
