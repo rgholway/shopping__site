@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import ItemCartTile from "./ItemCartTile"
+import PhotoCartTile from "./PhotoCartTile"
 
 class CartShow extends Component {
   constructor(props) {
     super(props);
     this.state = {
       active: "",
-      items: [],
+       names: [],
+       images: [],
       totalItems: ""
     }
     this.fetchCart = this.fetchCart.bind(this)
@@ -25,7 +27,8 @@ class CartShow extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      this.setState({ totalItems: body[0], items: body[1] })
+      debugger;
+      this.setState({ totalItems: body[0], names: body[2], images: body[3] })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -36,7 +39,7 @@ class CartShow extends Component {
 
   render() {
     let num = 0
-    let itemsArray = this.state.items.map(item => {
+    let itemsArray = this.state.names.map(item => {
       num += 1
       return(
         <ItemCartTile
@@ -45,11 +48,25 @@ class CartShow extends Component {
           />
       )
     })
+
+    let number = 0
+    let photosArray = this.state.images.map(item => {
+      number += 1
+      return(
+        <PhotoCartTile
+          key= {num}
+          photo= {item}
+          />
+      )
+    })
       return(
         <div>
           <div className="cart__title">My Cart</div>
           <div className="cart__background">
-            {itemsArray}
+            <div className="cart__items">
+              {itemsArray}
+              {photosArray}
+            </div>
           </div>
         </div>
       )

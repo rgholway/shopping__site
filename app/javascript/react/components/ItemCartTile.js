@@ -12,7 +12,7 @@ class ItemCartTile extends Component {
     console.log(this.props.name);
     console.log("hello");
       return(
-        <div>
+        <div className="cart__item">
           <div className="cart__name">{this.props.name}</div>
         </div>
       )
