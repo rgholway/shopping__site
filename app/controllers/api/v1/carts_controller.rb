@@ -1,17 +1,18 @@
 class Api::V1::CartsController < ApplicationController
-  protect_from_forgery unless: -> { request.format.json? }
+  skip_before_action :verify_authenticity_token
 
   def show
     cart = Cart.find(params["id"])
-    render json: [cart.number, cart.items[3]]
+    render json: [cart.number, cart.items]
   end
 
   def update
-    cart = Cart.find(params["id"])
+    cart = Cart.find(1)
     number = (cart.number.to_i + 1)
     cart.update(number: number)
-    item = cart.items.push(params[:item])
-    cart.update(items: item)
+    item = Item.find(params["id"])
+    items = cart.items.push(item.name)
+    cart.update(items: items)
   end
 
 end
