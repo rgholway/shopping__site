@@ -4,7 +4,7 @@
   left: 5%;
   width: 90%;
   height: auto;
-  background: lightgrey;
+  background: #F8F8F8;
 }
 
 .cart__title {
@@ -16,8 +16,17 @@
   font-size: 4vmin;
 }
 
+.cart__item {
+  position: relative;
+  height: 10vmin;
+  width: 100%;
+  margin-bottom: 2vmin;
+  border-bottom: solid 1px grey;
+}
+
 .cart__name {
   position: relative;
+  top: 25%;
   left: 20%;
   font-size: 3vmin;
   height: auto;

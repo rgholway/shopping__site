@@ -13,7 +13,7 @@ class ItemShow extends Component {
       photos: [],
       buyActive: "",
       cartActive: "",
-      cartItems: "0",
+      cartItems: "",
       heh: ""
     }
     this.fetchItem = this.fetchItem.bind(this)
@@ -183,7 +183,7 @@ class ItemShow extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      this.setState({ cartItems: body[0] })
+      this.setState({ cartItems: body[1] })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
