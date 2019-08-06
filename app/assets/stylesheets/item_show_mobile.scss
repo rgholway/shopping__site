@@ -1,0 +1,385 @@
+@media screen and (max-width:700px){
+  .item__main__photo {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    height: 60%;
+    width: 80%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: zoom-in;
+  }
+
+  .item__main__photo--active {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background:rgba(255,255,255, 0.5);
+    z-index: 20;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: zoom-out;
+  }
+
+  .item__main__name {
+    position: absolute;
+    height: auto;
+    width: auto;
+    left: 10%;
+    top: 83%;
+    font-size: 5vmin;
+    font-family: 'Exo 2', sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .diechi {
+    position: absolute;
+    height: auto;
+    width: 100%;
+    font-family: 'Exo 2', sans-serif;
+    font-style: bold;
+    font-size: 5vmin;
+    top: 3%;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .arrow__keys {
+    position: absolute;
+    height: 0%;
+    width: 0%;
+    overflow: scroll;
+  }
+
+  .buy__now {
+    position: absolute;
+    left: 20%;
+    top: 90%;
+    width: 20%;
+    height: 10%;
+    background: #F2CBA6;
+    color: white;
+    text-align: center;
+    font-size: 3vmin;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
+  }
+
+  .buy__now__text {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 3vmin;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
+  }
+
+  .buy__now__text--hover {
+    position: absolute;
+    top: 15%;
+    width: 100%;
+    text-align: center;
+    font-size: 3vmin;
+    background: white;
+    color: #F2CBA6;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
+  }
+
+  .buy__now:hover {
+    background: white;
+    border: solid 1px #F2CBA6;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
+  }
+
+  .add__cart {
+    position: absolute;
+    left: 55%;
+    top: 90%;
+    width: 20%;
+    height: 10%;
+    background: white;
+    color: #AF9AD2;
+    text-align: center;
+    font-size: 3vmin;
+    border: solid 1px #AF9AD2;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
+  }
+
+  .add__cart:hover {
+    background: #AF9AD2;
+    color: white;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
+  }
+
+  .add__cart__text {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    color: #AF9AD2;
+    text-align: center;
+    font-size: 3vmin;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
+  }
+
+  .add__cart__text--cartHover {
+    position: absolute;
+    top: 15%;
+    width: 100%;
+    text-align: center;
+    font-size: 3vmin;
+    background: #AF9AD2;
+    color: white;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
+  }
+
+  .price {
+    color: #F2CBA6;
+    float: right;
+    font-size: 5vmin;
+    margin-left: 80px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .item__main__description {
+    position: absolute;
+    height: 0%;
+    width: 0%;
+    overflow: scroll;
+  }
+
+  .show__photo {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .show__photo--active {
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    height: 80%;
+    width: 40%;
+    cursor: zoom-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .right__arrow--active {
+    position: absolute;
+    right: 0%;
+    height: 100%;
+    width: 15%;
+    color: black;
+    background: white;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    z-index: 30;
+  }
+
+  .right__arrow__text--active {
+    position: absolute;
+    top: 35%;
+    right: 4%;
+    width: 100%;
+    text-align: right;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 10vmin;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .right__arrow__text {
+    position: absolute;
+    height: 0%;
+    width: 0%;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .left__arrow__text--active {
+    position: absolute;
+    top: 35%;
+    left: 4%;
+    width: 100%;
+    text-align: left;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 10vmin;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .left__arrow__text {
+    position: absolute;
+    height: 0%;
+    width: 0%;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .escape__key--active {
+    position: absolute;
+    top: 0%;
+    right: 1%;
+    height: auto;
+    width: 5%;
+    color: black;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    z-index: 31;
+    text-align: right;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 5vmin;
+  }
+
+  .right__arrow {
+    height: 0%;
+    width: 0%;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .left__arrow {
+    height: 0%;
+    width: 0%;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .escape__key {
+    height: 0%;
+    width: 0%;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .left__arrow--active {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 5%;
+    color: black;
+    background: white;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    z-index: 30;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .cart {
+    position: absolute;
+    right: 7.5%;
+    top: 2%;
+    height: 8vmin;
+    width: 12vmin;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .shopping__cart {
+    max-width: 100%;
+    max-height: 100%;
+    background-position: top center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .cart__number {
+    position: absolute;
+    right: 20%;
+    top: 5%;
+    height: 3vmin;
+    width: 3vmin;
+    color: black;
+    background: white;
+    border: solid 1px black;
+    border-radius: 100%;
+    z-index: 20;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .number__text {
+    position: absolute;
+    top: -20%;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: 2vmin;
+    font-family: 'Exo 2', sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .right__picture {
+    position: absolute;
+    height: 0%;
+    width: 0%;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+}
